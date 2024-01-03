@@ -10,6 +10,11 @@ from redash.handlers.alerts import (
     AlertSubscriptionResource,
 )
 from redash.handlers.base import org_scoped_rule
+
+from redash.handlers.chat import (
+    ChatResource
+)
+
 from redash.handlers.dashboards import (
     DashboardFavoriteListResource,
     DashboardForkResource,
@@ -104,6 +109,7 @@ class ApiExt(Api):
 
 api = ApiExt()
 
+api.add_org_resource(ChatResource, "/api/chat", endpoint="chat")
 
 @api.representation("application/json")
 def json_representation(data, code, headers=None):
