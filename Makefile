@@ -15,7 +15,7 @@ test_db:
 
 create_database: .env
 	docker compose run server create_db
-
+	docker compose run server pip install openai
 clean:
 	docker compose down && docker compose rm
 
