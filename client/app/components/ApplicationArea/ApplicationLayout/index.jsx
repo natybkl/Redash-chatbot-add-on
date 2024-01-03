@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import DynamicComponent from "@/components/DynamicComponent";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
+import ChatBox from "@/components/chat/ChatBox";
 
 import "./index.less";
 
@@ -17,6 +18,11 @@ export default function ApplicationLayout({ children }) {
         <div className="application-layout-side-menu">
           <DynamicComponent name="ApplicationDesktopNavbar">
             <DesktopNavbar />
+          </DynamicComponent>
+        </div>
+        <div>
+          <DynamicComponent name="ApplicationDesktopChat">
+            <ChatBox/>
           </DynamicComponent>
         </div>
         <div className="application-layout-content">
